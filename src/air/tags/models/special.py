@@ -1,9 +1,9 @@
 """Special Air Tags that aren't find in any other category."""
 
-from typing import Any, Literal, override
+from typing import Literal, override
 
-from ..utils import locals_cleanup
-from .base import AttributesType, BaseTag
+from ..utils import HTML_DOCTYPE, locals_cleanup
+from .base import AttributesType, BaseTag, Renderable
 
 
 class Html(BaseTag):
@@ -11,7 +11,18 @@ class Html(BaseTag):
 
     @override
     def _render(self) -> str:
-        return f"<!doctype html>{self._render_paired()}"
+        return f"{HTML_DOCTYPE}{self._render_paired()}"
+
+    @override
+    def pretty_render(
+        self,
+        *,
+        with_body: bool = False,
+        with_head: bool = False,
+        with_doctype: bool = True,
+    ) -> str:
+        """Pretty-print without escaping."""
+        return super().pretty_render(with_body=with_body, with_head=with_head, with_doctype=with_doctype)
 
 
 class Transparent(BaseTag):
@@ -19,7 +30,7 @@ class Transparent(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
     ) -> None:
         super().__init__(*children)
 

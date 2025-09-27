@@ -2,10 +2,8 @@
 
 Script and Style tags can be found in the [air.tags.models.special](/reference/air.tags.models.special) page."""
 
-from typing import Any
-
 from ..utils import locals_cleanup
-from .base import AttributesType, BaseTag
+from .base import AttributesType, BaseTag, Renderable
 from .special import SelfClosingTag
 
 
@@ -31,7 +29,7 @@ class A(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         href: str | None = None,
         target: str | None = None,
         download: str | None = None,
@@ -62,7 +60,7 @@ class Abbr(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -84,7 +82,7 @@ class Address(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -145,7 +143,7 @@ class Article(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -167,7 +165,7 @@ class Aside(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -195,7 +193,7 @@ class Audio(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         autoplay: str | None = None,
         controls: str | None = None,
         loop: str | None = None,
@@ -223,7 +221,7 @@ class B(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -268,7 +266,7 @@ class Bdi(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -291,7 +289,7 @@ class Bdo(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         dir: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -315,7 +313,7 @@ class Blockquote(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         cite: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -335,7 +333,7 @@ class Body(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         **kwargs: AttributesType,
     ) -> None:
         super().__init__(*children, **kwargs | locals_cleanup(locals()))
@@ -388,7 +386,7 @@ class Button(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         name: str | None = None,
         type: str | None = None,
         value: str | None = None,
@@ -425,7 +423,7 @@ class Canvas(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         width: str | int | None = None,
         height: str | int | None = None,
         class_: str | None = None,
@@ -449,7 +447,7 @@ class Caption(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -471,7 +469,7 @@ class Cite(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -493,7 +491,7 @@ class Code(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -539,7 +537,7 @@ class Colgroup(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         span: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -563,7 +561,7 @@ class Data(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         value: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -586,7 +584,7 @@ class Datalist(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -610,7 +608,7 @@ class Dd(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         cite: str | None = None,
         datetime: str | None = None,
         class_: str | None = None,
@@ -634,7 +632,7 @@ class Del(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -657,7 +655,7 @@ class Details(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         open: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -680,7 +678,7 @@ class Dfn(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -703,7 +701,7 @@ class Dialog(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         open: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -726,7 +724,7 @@ class Div(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -748,7 +746,7 @@ class Dl(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -770,7 +768,7 @@ class Dt(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -792,7 +790,7 @@ class Em(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -846,7 +844,7 @@ class Fieldset(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         disabled: str | None = None,
         form: str | None = None,
         name: str | None = None,
@@ -871,7 +869,7 @@ class Figcaption(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -893,7 +891,7 @@ class Figure(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -915,7 +913,7 @@ class Footer(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -946,7 +944,7 @@ class Form(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         action: str | None = None,
         method: str | None = None,
         accept_charset: str | None = None,
@@ -977,7 +975,7 @@ class H1(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -999,7 +997,7 @@ class H2(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1021,7 +1019,7 @@ class H3(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1043,7 +1041,7 @@ class H4(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1065,7 +1063,7 @@ class H5(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1087,7 +1085,7 @@ class H6(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1107,7 +1105,7 @@ class Head(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         profile: str | None = None,
         **kwargs: AttributesType,
     ) -> None:
@@ -1127,7 +1125,7 @@ class Header(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1149,7 +1147,7 @@ class Hgroup(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1193,7 +1191,7 @@ class I(BaseTag):  # noqa: E742
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1226,7 +1224,7 @@ class Iframe(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         src: str | None = None,
         srcdoc: str | None = None,
         width: str | int | None = None,
@@ -1391,7 +1389,7 @@ class Ins(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         cite: str | None = None,
         datetime: str | None = None,
         class_: str | None = None,
@@ -1415,7 +1413,7 @@ class Kbd(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1438,7 +1436,7 @@ class Label(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         for_: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -1461,7 +1459,7 @@ class Legend(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1484,7 +1482,7 @@ class Li(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         value: int | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -1558,7 +1556,7 @@ class Main(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1581,7 +1579,7 @@ class Map(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         name: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -1604,7 +1602,7 @@ class Mark(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1627,7 +1625,7 @@ class Menu(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         compact: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -1686,7 +1684,7 @@ class Meter(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         value: str | None = None,
         min: str | None = None,
         max: str | None = None,
@@ -1714,7 +1712,7 @@ class Nav(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1735,7 +1733,7 @@ class Noscript(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         **kwargs: AttributesType,
@@ -1769,7 +1767,7 @@ class Object(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         archive: str | None = None,
         border: str | None = None,
         classid: str | None = None,
@@ -1809,7 +1807,7 @@ class Ol(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         compact: str | None = None,
         reversed: str | None = None,
         start: str | None = None,
@@ -1837,7 +1835,7 @@ class Optgroup(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         disabled: str | None = None,
         label: str | None = None,
         class_: str | None = None,
@@ -1865,7 +1863,7 @@ class Option(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         disabled: str | None = None,
         label: str | None = None,
         selected: bool | None = None,
@@ -1894,7 +1892,7 @@ class Output(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         for_: str | None = None,
         form: str | None = None,
         name: str | None = None,
@@ -1919,7 +1917,7 @@ class P(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1948,11 +1946,19 @@ class Param(SelfClosingTag):
 
 
 class Picture(BaseTag):
-    """Defines a container for multiple image resources"""
+    """Defines a container for multiple image resources
+
+    Args:
+        children: Tags, strings, or other rendered content.
+        class_: Substituted as the DOM `class` attribute.
+        id: DOM ID attribute.
+        style: Inline style attribute.
+        kwargs: Keyword arguments transformed into tag attributes.
+    """
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -1962,11 +1968,21 @@ class Picture(BaseTag):
 
 
 class Pre(BaseTag):
-    """Defines preformatted text"""
+    """Defines preformatted text
+
+    Args:
+        children: Tags, strings, or other rendered content.
+        width: preferred counf of characters that a line should have
+        wrap: hint indicating how overflow must happen
+        class_: Substituted as the DOM `class` attribute.
+        id: DOM ID attribute.
+        style: Inline style attribute.
+        kwargs: Keyword arguments transformed into tag attributes.
+    """
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         width: str | int | None = None,
         wrap: str | None = None,
         class_: str | None = None,
@@ -1978,11 +1994,21 @@ class Pre(BaseTag):
 
 
 class Progress(BaseTag):
-    """Represents the progress of a task"""
+    """Represents the progress of a task
+
+    Args:
+        children: Tags, strings, or other rendered content.
+        max: The maximum value of the progress bar.
+        value: The current value of the progress bar.
+        class_: Substituted as the DOM `class` attribute.
+        id: DOM ID attribute.
+        style: Inline style attribute.
+        kwargs: Keyword arguments transformed into tag attributes.
+    """
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         max: str | None = None,
         value: str | None = None,
         class_: str | None = None,
@@ -1994,11 +2020,20 @@ class Progress(BaseTag):
 
 
 class Q(BaseTag):
-    """Defines a short quotation"""
+    """Defines a short quotation
+
+    Args:
+        children: Tags, strings, or other rendered content.
+        cite: Specifies a URL to the source of the quotation.
+        class_: Substituted as the DOM `class` attribute.
+        id: DOM ID attribute.
+        style: Inline style attribute.
+        kwargs: Keyword arguments transformed into tag attributes.
+    """
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         cite: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -2009,11 +2044,18 @@ class Q(BaseTag):
 
 
 class Rp(BaseTag):
-    """Defines what to show in browsers that do not support ruby annotations"""
+    """Defines what to show in browsers that do not support ruby annotations
+
+    Args:
+        children: Tags, strings, or other rendered content.
+        class_: Substituted as the DOM `class` attribute.
+        id: DOM ID attribute.
+        kwargs: Keyword arguments transformed into tag attributes.
+    """
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         **kwargs: AttributesType,
@@ -2022,11 +2064,18 @@ class Rp(BaseTag):
 
 
 class Rt(BaseTag):
-    """Defines an explanation/pronunciation of characters (for East Asian typography)"""
+    """Defines an explanation/pronunciation of characters (for East Asian typography)
+
+    Args:
+        children: Tags, strings, or other rendered content.
+        class_: Substituted as the DOM `class` attribute.
+        id: DOM ID attribute.
+        kwargs: Keyword arguments transformed into tag attributes.
+    """
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         **kwargs: AttributesType,
@@ -2035,11 +2084,18 @@ class Rt(BaseTag):
 
 
 class Ruby(BaseTag):
-    """Defines a ruby annotation (for East Asian typography)"""
+    """Defines a ruby annotation (for East Asian typography)
+
+    Args:
+        children: Tags, strings, or other rendered content.
+        class_: Substituted as the DOM `class` attribute.
+        id: DOM ID attribute.
+        kwargs: Keyword arguments transformed into tag attributes.
+    """
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         **kwargs: AttributesType,
@@ -2052,7 +2108,7 @@ class S(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2066,7 +2122,7 @@ class Samp(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2080,7 +2136,7 @@ class Search(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2094,7 +2150,7 @@ class Section(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2108,7 +2164,7 @@ class Select(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         autocomplete: str | None = None,
         autofocus: str | None = None,
         disabled: str | None = None,
@@ -2130,7 +2186,7 @@ class Small(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2144,7 +2200,7 @@ class Source(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         src: str | None = None,
         type: str | None = None,
         sizes: str | None = None,
@@ -2165,7 +2221,7 @@ class Span(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2179,7 +2235,7 @@ class Strong(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2193,7 +2249,7 @@ class Sub(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2207,7 +2263,7 @@ class Summary(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2221,7 +2277,7 @@ class Sup(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2235,7 +2291,7 @@ class Table(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2249,7 +2305,7 @@ class Tbody(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2263,7 +2319,7 @@ class Td(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         colspan: str | None = None,
         rowspan: str | None = None,
         headers: str | None = None,
@@ -2280,7 +2336,7 @@ class Template(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         shadowrootmode: str | None = None,
         shadowrootdelegatesfocus: str | None = None,
         shadowrootclonable: str | None = None,
@@ -2297,7 +2353,7 @@ class Textarea(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         autocapitalize: str | None = None,
         autocomplete: str | None = None,
         autocorrect: str | None = None,
@@ -2328,7 +2384,7 @@ class Tfoot(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2342,7 +2398,7 @@ class Th(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         abbr: str | None = None,
         colspan: str | None = None,
         headers: str | None = None,
@@ -2361,7 +2417,7 @@ class Thead(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2375,7 +2431,7 @@ class Time(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         datetime: str | None = None,
         class_: str | None = None,
         id: str | None = None,
@@ -2390,7 +2446,7 @@ class Title(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2404,7 +2460,7 @@ class Tr(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2437,7 +2493,7 @@ class U(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         compact: str | None = None,
         type: str | None = None,
         class_: str | None = None,
@@ -2453,7 +2509,7 @@ class Ul(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2467,7 +2523,7 @@ class Var(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         class_: str | None = None,
         id: str | None = None,
         style: str | None = None,
@@ -2481,7 +2537,7 @@ class Video(BaseTag):
 
     def __init__(
         self,
-        *children: Any,
+        *children: Renderable,
         src: str | None = None,
         autoplay: str | None = None,
         controls: str | None = None,
