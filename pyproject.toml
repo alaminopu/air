@@ -1,7 +1,7 @@
 # region ----> project <----
 [project]
 name = "air"
-version = "0.34.0"
+version = "0.35.0"
 description = "The new Python web framework by the authors of Two Scoops of Django. Built with FastAPI, Starlette, and Pydantic."
 authors = [
     { name = "Audrey M. Roy Greenfeld", email = "audrey@feldroy.com" },
@@ -9,7 +9,7 @@ authors = [
 ]
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">=3.12,<3.14"
+requires-python = ">=3.13,<3.15"
 urls.Homepage = "https://github.com/feldroy/air"
 urls.Docs = "https://feldroy.github.io/air/"
 urls.Issues = "https://github.com/feldroy/air/issues"
@@ -30,14 +30,15 @@ classifiers = [
     "Framework :: FastAPI",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 
 dependencies = [
     "fastapi>=0.116.1",
     "itsdangerous>=2.2.0",
     "Jinja2>=3.1.6",
+    "pydantic>=2.12.0b1",
     "python-multipart>=0.0.20",
 ]
 # endregion project
@@ -241,7 +242,7 @@ air = { workspace = true }
 [build-system]
 # Ensure the chosen backend is present. A version range keeps CI reproducible
 # (meaning: stable over time) while allowing safe updates.
-requires = ["uv_build>=0.8.7,<0.9.0"]
+requires = ["uv_build>=0.9.0,<0.10.0"]
 # Use uv’s build backend. It is fast and strict, supports PEP 660 editable installs,
 # and produces correct distribution metadata for tooling.
 build-backend = "uv_build"
@@ -448,7 +449,7 @@ root = ["./src", "."]
 # Freeze analysis semantics across dev/CI.
 # If your project table already has `requires-python`, Ty will infer the min;
 # setting explicitly keeps things deterministic.
-python-version = "3.13"
+python-version = "3.14"
 # For cross-platform libraries, analyze as if code may run anywhere.
 python-platform = "all"
 
@@ -499,7 +500,7 @@ project-excludes = [
 use-ignore-files = true
 #### configuring what to type check and where to import from
 search-path = ["src", "docs"]
-python-version = "3.13"
+python-version = "3.14"
 # Keep resolution stable
 disable-search-path-heuristics = true
 # Should Pyrefly ignore errors based on annotations from other tools,
